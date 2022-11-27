@@ -8,7 +8,7 @@ spec:
   ports:
   - name: myport
     nodePort: 31534
-    port: 8080
+    port: 8081
     protocol: TCP
     targetPort: 80
   type: LoadBalancer
