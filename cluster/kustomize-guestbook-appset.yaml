@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: guestbook
+spec:
+  generators:
+  - list:
+      elements:
+      - prefix: mc
+      - prefix: mv
+  template:
+    metadata:
+      name: 'guestbook-{{prefix}}'
+    spec:
+      project: '{{prefix}}'
+      source:
+        path: kustomize-guestbook
+        repoURL: 'https://github.com/santanaguy/argocd-example-apps'
+        targetRevision: HEAD
+      destination:
+        name: ''
+        namespace: guestbook
+        server: 'https://kubernetes.default.svc'
+      syncPolicy:
+        automated:
+          prune: false
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
