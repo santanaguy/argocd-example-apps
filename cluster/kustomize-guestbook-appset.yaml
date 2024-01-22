@@ -13,7 +13,7 @@ spec:
     metadata:
       name: 'guestbook-{{prefix}}'
     spec:
-      project: '{{prefix}}'
+      project: default
       source:
         path: kustomize-guestbook
         repoURL: 'https://github.com/santanaguy/argocd-example-apps'
