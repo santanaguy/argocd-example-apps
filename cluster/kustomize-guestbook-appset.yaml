@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: guestbook
-  namespace: default
+  namespace: argocd
 spec:
   generators:
   - list:
@@ -21,7 +21,7 @@ spec:
         targetRevision: HEAD
       destination:
         name: ''
-        namespace: guestbook
+        namespace: '{{prefix}}'
         server: 'https://kubernetes.default.svc'
       syncPolicy:
         automated:
