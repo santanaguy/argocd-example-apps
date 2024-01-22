@@ -14,7 +14,7 @@ spec:
       name: 'guestbook-{{prefix}}'
       namespace: '{{prefix}}'
     spec:
-      project: default
+      project: '{{prefix}}'
       source:
         path: kustomize-guestbook
         repoURL: 'https://github.com/santanaguy/argocd-example-apps'
