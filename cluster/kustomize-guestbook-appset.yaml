@@ -12,6 +12,7 @@ spec:
   template:
     metadata:
       name: 'guestbook-{{prefix}}'
+      namespace: '{{prefix}}'
     spec:
       project: default
       source:
