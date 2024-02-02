@@ -19,6 +19,11 @@ spec:
         path: kustomize-guestbook
         repoURL: 'https://github.com/santanaguy/argocd-example-apps'
         targetRevision: HEAD
+        plugin:
+          name: my-plugin-config-v1.0
+        kustomize:
+          commonAnnotations:
+            app/prefix: '{{prefix}}'
       destination:
         name: ''
         namespace: '{{prefix}}'
