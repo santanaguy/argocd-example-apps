@@ -9,6 +9,7 @@ spec:
       elements:
       - prefix: mc
       - prefix: mv
+      - prefix: system
   template:
     metadata:
       name: 'guestbook-{{prefix}}'
