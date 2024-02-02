@@ -21,6 +21,9 @@ spec:
         targetRevision: HEAD
         plugin:
           name: my-plugin-config-v1.0
+          env:
+          - name: PREFIX
+            value: '{{prefix}}'
       destination:
         name: ''
         namespace: '{{prefix}}'
